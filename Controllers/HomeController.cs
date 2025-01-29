@@ -12,16 +12,31 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet("/omsidan")]
+    [HttpGet("/om")]
+    public IActionResult About()
+    {
+        return View();
+    }
+
     [HttpGet("/resor")]
     public IActionResult Trips ()
     {
         return View();
     }
 
-    [HttpGet("/omsidan")]
-    [HttpGet("/om")]
-    public IActionResult About()
+    [HttpPost("/resor")]
+    public IActionResult Trips(TripModel model)
     {
+        // Validera input
+        if(ModelState.IsValid)
+        {
+            // Korrekt
+        }
+        else
+        {
+            //Inkorrekt
+        }
         return View();
     }
 
