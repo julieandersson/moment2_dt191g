@@ -1,1 +1,22 @@
+@model moment2_dt191g.Models.TripModel
+
 <h2>Resor...</h2>
+
+<form method="post">
+    <label asp-for="Country"></label>
+    <input asp-for="Country" />
+    <br>
+    <label asp-for="City"></label>
+    <input asp-for="City" />
+    <br>
+    <label asp-for="StartDate"></label>
+    <input asp-for="StartDate" />
+    <br>
+    <label asp-for="EndDate"></label>
+    <input asp-for="EndDate" />
+    <br>
+    <label asp-for="Rating"></label>
+    <input asp-for="Rating" />
+    <br>
+    <input type="submit" value="Lägg till resa">
+</form>
