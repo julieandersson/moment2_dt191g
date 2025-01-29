@@ -15,11 +15,11 @@ public class TripModel {
     
     [Required(ErrorMessage = "Startdatum måste anges.")]
     [DataType(DataType.Date, ErrorMessage = "Startdatum måste vara ett giltigt datum.")]
-    public DateTime StartDate { get; set; } // När resan startade
+    public required DateTime StartDate { get; set; } // När resan startade
     
     [Required(ErrorMessage = "Slutdatum måste anges.")]
     [DataType(DataType.Date, ErrorMessage = "Slutdatum måste vara ett giltigt datum.")]
-    public DateTime EndDate { get; set; } // När resan slutade
+    public required DateTime EndDate { get; set; } // När resan slutade
     
     [Required(ErrorMessage = "Betyg måste anges.")]
     [Range(1, 5, ErrorMessage = "Betyg måste vara mellan 1 och 5.")]
