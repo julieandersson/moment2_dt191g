@@ -12,11 +12,14 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet("/resor")]
     public IActionResult Trips ()
     {
         return View();
     }
 
+    [HttpGet("/omsidan")]
+    [HttpGet("/om")]
     public IActionResult About()
     {
         return View();
