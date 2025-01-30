@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using moment2_dt191g.Models;
 
@@ -28,14 +29,28 @@ public class HomeController : Controller
     [HttpPost("/resor")]
     public IActionResult Trips(TripModel model)
     {
-        // Validera input
-        if(ModelState.IsValid)
+        // Validerar input
+        if (ModelState.IsValid)
         {
-            // Korrekt
-        }
-        else
-        {
-            //Inkorrekt
+            // Läser in trips.json
+            string jsonStr = System.IO.File.ReadAllText("trips.json");
+
+            // Deserialiserar JSON
+            var trips = JsonSerializer.Deserialize<List<TripModel>>(jsonStr);
+
+            // Lägg till ny resa
+            if (trips != null)
+            {
+                trips.Add(model);
+            
+                // Serialiserar JSON
+                jsonStr = JsonSerializer.Serialize(trips);
+
+                // Skriv ändringar till trips.json
+                System.IO.File.WriteAllText("trips.json", jsonStr);
+            }
+
+            ModelState.Clear(); // Rensar formulär efter inskick
         }
         return View();
     }
