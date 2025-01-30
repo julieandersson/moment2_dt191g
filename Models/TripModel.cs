@@ -5,25 +5,25 @@ namespace moment2_dt191g.Models;
 public class TripModel {
     // Properties
 
-    [Required]
-    [StringLength(56, MinimumLength = 2)]
+    [Required(ErrorMessage = "Land måste anges.")]
+    [StringLength(56, MinimumLength = 2, ErrorMessage = "Landet måste vara mellan 2 och 56 tecken.")]
     public required string Country { get; set; } // Landet man besökt
     
-    [Required]
-    [StringLength(85, MinimumLength = 1)]
+    [Required(ErrorMessage = "Stad måste anges.")]
+    [StringLength(85, MinimumLength = 2, ErrorMessage = "Stadens namn måste vara mellan 2 och 85 tecken.")]
     public required string City { get; set; } // Staden man besökte
     
-    [Required]
+    [Required(ErrorMessage = "Startdatum för resan måste anges")]
     [DataType(DataType.Date)]
-    public required DateTime StartDate { get; set; } // När resan startade
+    public DateTime? StartDate { get; set; } = DateTime.Now; // När resan startade
     
-    [Required]
+    [Required(ErrorMessage = "Slutdatum för resan måste anges")]
     [DataType(DataType.Date)]
-    public required DateTime EndDate { get; set; } // När resan slutade
+    public DateTime? EndDate { get; set; } = DateTime.Now; // När resan slutade
     
-    [Required]
-    [Range(1, 5)]
-    public required int Rating { get; set; } // Betyg 1-5
+    [Required(ErrorMessage = "Betyg måste anges.")]
+    [Range(1, 5, ErrorMessage = "Betyg måste vara mellan 1 och 5.")]
+    public int? Rating { get; set; } = 1; // Betyg 1-5
 }
 
 
