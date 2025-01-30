@@ -1,5 +1,18 @@
 ﻿@{
     ViewData["Title"] = "Startsida";
 }
+@model List<moment2_dt191g.Models.TripModel>
 
 <h2 class="mb-4 text-center">Startsida</h2>
+
+<h4 class="fs-5">Platser jag har besökt:</h4>
+
+<ul>
+    @foreach (var trip in Model)
+    {
+        <li>
+            @trip.Country - @trip.City (@trip.Rating ★) <br />
+            <strong>@trip.StartDate?.ToString("yyyy-MM-dd")</strong> → <strong>@trip.EndDate?.ToString("yyyy-MM-dd")</strong>
+        </li>
+    }
+</ul>

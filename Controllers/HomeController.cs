@@ -10,7 +10,13 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
+        // Läser in trips.json
+        string jsonStr = System.IO.File.ReadAllText("trips.json");
+
+        // Deserialiserar JSON
+        var trips = JsonSerializer.Deserialize<List<TripModel>>(jsonStr);
+        
+        return View(trips); // skickar med listan med resor
     }
 
     [HttpGet("/omsidan")]
@@ -51,6 +57,8 @@ public class HomeController : Controller
             }
 
             ModelState.Clear(); // Rensar formulär efter inskick
+
+            return RedirectToAction("Index", "Home"); // redirectar till startsidan efter inskick av formulär
         }
         return View();
     }
