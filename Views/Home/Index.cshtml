@@ -7,6 +7,13 @@
 <h4>@ViewBag.Message</h4>
 <p>Dagens datum: @ViewBag.Today</p>
 
+@if (!string.IsNullOrEmpty(ViewBag.LatestTripLocation))
+{
+    <div class="alert alert-success">
+        <p><strong>Senaste tillagda resa:</strong> @ViewBag.LatestTripLocation</p>
+    </div>
+}
+
 <h4 class="fs-5">Platser jag har besökt:</h4>
 
 <ul>
