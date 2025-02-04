@@ -5,7 +5,7 @@
 
 <h2 class="mb-4 text-center">Startsida</h2>
 <h4>@ViewBag.Message</h4>
-<p>Dagens datum: @ViewBag.Today</p>
+<p><strong>Dagens datum:</strong> @ViewBag.Today</p>
 
 @if (!string.IsNullOrEmpty(ViewBag.LatestTripLocation))
 {
@@ -16,12 +16,19 @@
 
 <h4 class="fs-5">Platser jag har besökt:</h4>
 
-<ul>
+<div class="row">
     @foreach (var trip in Model)
     {
-        <li>
-            @trip.Country - @trip.City (@trip.Rating ★) <br />
-            <strong>@trip.StartDate?.ToString("yyyy-MM-dd")</strong> → <strong>@trip.EndDate?.ToString("yyyy-MM-dd")</strong>
-        </li>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card custom-blue shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">@trip.Country - @trip.City</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Betyg: @trip.Rating ★</h6>
+                    <p class="card-text">
+                        <strong>Datum:</strong> @trip.StartDate?.ToString("yyyy-MM-dd") → @trip.EndDate?.ToString("yyyy-MM-dd")
+                    </p>
+                </div>
+            </div>
+        </div>
     }
-</ul>
+</div>
