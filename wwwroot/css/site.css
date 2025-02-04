@@ -29,6 +29,11 @@ main {
   max-width: 1100px;
 }
 
+section {
+  max-width: 95ch;
+  margin: 0 auto;
+}
+
 .custom-blue { 
   background-color: #c2dff1;
   color: #2a2a2a;

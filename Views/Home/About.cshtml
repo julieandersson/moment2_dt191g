@@ -3,3 +3,34 @@
 }
 
 <h2 class="mb-4 text-center">Om sidan</h2>
+
+<section class="mb-4">
+    <p>
+        Denna webbapplikation har utvecklats som en del av kursen <strong>Webbutveckling med .NET.</strong> 
+        Uppgiften ingår i moment 2 och gick ut på att bygga en webbapplikation med <strong>ASP.NET Core MVC</strong> och implementera grundläggande funktioner 
+        såsom routing, datalagring och hantering av användarinmatning.
+    </p>
+
+    <h5 class="mt-4">Om webbplatsen</h5>
+    <p>
+        Applikationen är en enkel resedagbok där användaren kan registrera och spara sina resor. Resorna innehåller uppgifter 
+        som land, stad, resedatum och ett betyg mellan 1-5. Inlagda resor lagras i en JSON-fil och visas sedan på startsidan.
+    </p>
+
+    <h5 class="mt-4">Tekniker och funktioner</h5>
+    <ul>
+        <li><strong>ASP.NET Core MVC</strong> - Strukturering enligt MVC-designmönstret.</li>
+        <li><strong>Routing</strong> - Anpassad routing för att hantera sidor och vyer.</li>
+        <li><strong>Models, Views & Controllers</strong> - Skapande av en strukturerad applikation.</li>
+        <li><strong>Session</strong> - Senaste tillagda resan sparas i sessionen och visas på startsidan.</li>
+        <li><strong>JSON-lagring</strong> - Resor sparas och hämtas från en JSON-fil.</li>
+        <li><strong>Bootstrap</strong> - För responsiv design.</li>
+    </ul>
+
+    <h5 class="mt-4">Såhär funkar det:</h5>
+    <ol>
+        <li>Användaren fyller i resedetaljer i formuläret under sidan "Resor".</li>
+        <li>Resan sparas i en JSON-fil och den senaste resan lagras i en session.</li>
+        <li>På startsidan listas alla resor med information om datum och betyg.</li>
+    </ol>
+</section>

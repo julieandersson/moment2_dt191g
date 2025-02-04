@@ -4,8 +4,8 @@
 @model List<moment2_dt191g.Models.TripModel>
 
 <h2 class="mb-4 text-center">Startsida</h2>
-<h4>@ViewBag.Message</h4>
 <p><strong>Dagens datum:</strong> @ViewBag.Today</p>
+<h4>@ViewBag.Message</h4>
 
 @if (!string.IsNullOrEmpty(ViewBag.LatestTripLocation))
 {
@@ -14,7 +14,7 @@
     </div>
 }
 
-<h4 class="fs-5">Platser jag har besökt:</h4>
+<h5 class="fs-5 mt-4 mb-3">Nedan finner du besökta resmål:</h5>
 
 <div class="row">
     @foreach (var trip in Model)
