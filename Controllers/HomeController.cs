@@ -15,6 +15,11 @@ public class HomeController : Controller
 
         // Deserialiserar JSON
         var trips = JsonSerializer.Deserialize<List<TripModel>>(jsonStr);
+
+        // Skickar en hälsning till vyn via ViewBag
+        ViewBag.Message = "Välkommen till resedagboken!";
+        // Skickar dagens datum till vyn
+        ViewBag.Today = DateTime.Now.ToString("yyyy-MM-dd");
         
         return View(trips); // skickar med listan med resor
     }
