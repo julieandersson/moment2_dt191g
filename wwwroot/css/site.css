@@ -1,12 +1,6 @@
 html {
-  font-size: 14px;
+  font-size: 16px;
   position: relative;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
 }
 
 body {
@@ -17,7 +11,7 @@ body {
 }
 
 nav {
-  height: 80px;
+  min-height: 80px;
   font-size: 18px;
 }
 
@@ -64,4 +58,24 @@ footer {
   justify-content: center;
   text-align: center;
   margin-top: 10px;
+}
+
+@media (max-width: 799px) {
+  html {
+      font-size: 14px;
+  }
+
+  nav {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 575px) {
+  html {
+      font-size: 13px;
+  }
+
+  nav {
+    font-size: 15px;
+  }
 }
